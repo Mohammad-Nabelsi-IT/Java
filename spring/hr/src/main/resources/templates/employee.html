@@ -1,0 +1,173 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+<img class=" w-full h-[350px]" src="/images/philadelphia-skyline-in-panorama-fzj229taatnjvuqs.jpg">
+
+<div class="text-center m-6 ">
+    <a href="/dept/show" class="text-xl btn btn-sm bg-orange-600 text-black p-2 ">Department Management</a>
+    <a href="/employee/show" class="text-xl btn btn-sm bg-orange-600 text-black p-2 ">Employee Management</a>
+    <a href="/jobs/show" class="text-xl btn btn-sm bg-orange-600 text-black p-2 ">Job Management</a>
+</div>
+
+<h1 class="text-5xl text-center my-12">
+    Employee Information
+</h1>
+
+<div class="w-full flex lg:flex-row flex-col">
+<form class="max-w-md mx-auto my-4" method="post" action="/employee/create">
+
+
+    <div class="grid md:grid-cols-2 md:gap-6">
+        <div class="relative z-0 w-full mb-5 group">
+            <input type="text" name="first_name" id="first_name"
+                   class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-black dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+                   placeholder=" " required/>
+            <label for="first_name"
+                   class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">First
+                name</label>
+        </div>
+        <div class="relative z-0 w-full mb-5 group">
+            <input type="text" name="last_name" id="last_name"
+                   class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-black dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+                   placeholder=" " required/>
+            <label for="last_name"
+                   class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Last
+                name</label>
+        </div>
+    </div>
+    <div class="relative z-0 w-full mb-5 group">
+        <input type="email" name="email" id="email"
+               class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-black dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+               placeholder=" " required/>
+        <label for="email"
+               class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Email
+        </label>
+    </div>
+    <div class="grid md:grid-cols-2 md:gap-6">
+        <div class="relative z-0 w-full mb-5 group">
+            <input type="text" name="phone" id="phone"
+                   class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-black dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+                   placeholder=" " required/>
+            <label for="phone"
+                   class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Phone
+            </label>
+        </div>
+
+        <div class="relative z-0 w-full mb-5 group">
+            <select name="job_id" class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-black dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer">
+                <option>Choose Job</option>
+                <th:block th:each="jobs:${jobs}">
+                    <option th:value="${jobs.getId()}" th:text="${jobs.getName()}"></option>
+                </th:block>
+
+            </select>
+
+            <label for="Job"
+                   class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Job
+            </label>
+        </div>
+        <div class="relative z-0 w-full mb-5 group">
+            <select name="department_id" class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-black dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer">
+                <option>Choose Department</option>
+                <th:block th:each="depts:${depts}">
+                    <option th:value="${depts.getId()}" th:text="${depts.getName()}"></option>
+                </th:block>
+
+            </select>
+
+            <label for="Department"
+                   class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Department
+            </label>
+        </div>
+
+    </div>
+    <button type="submit"
+            class="text-white bg-blue-700 hover:bg-orange-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-orange-700 dark:focus:ring-blue-800">
+        Submit
+    </button>
+</form>
+
+<!--====================================================================-->
+
+<div class="relative overflow-x-auto shadow-md sm:rounded-lg">
+    <table class="w-full text-sm text-left rtl:text-right text-gray-500 ">
+        <thead class="text-xs text-gray-700 uppercase bg-gray-50 ">
+        <tr>
+            <th scope="col" class="px-6 py-3">
+                ID
+            </th>
+            <th scope="col" class="px-6 py-3">
+                First Name
+            </th>
+            <th scope="col" class="px-6 py-3">
+                Last Name
+            </th>
+            <th scope="col" class="px-6 py-3">
+                Phone
+            </th>
+            <th scope="col" class="px-6 py-3">
+                Email
+            </th>
+
+            <th scope="col" class="px-6 py-3">
+                Job
+            </th>
+            <th scope="col" class="px-6 py-3">
+                Department
+            </th>
+            <th scope="col" class="px-6 py-3">
+                Action
+            </th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="employee,state:${employees}" class="odd:bg-white even:bg-gray-50  border-b ">
+            <th  scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap ">
+                <span th:text="${state.index+1}"></span>
+            </th>
+            <td th:text ="${employee.getFirst_name()}" class="px-6 py-4">
+
+            </td>
+            <td th:text="${employee.getLast_name()}" class="px-6 py-4">
+
+            </td>
+
+
+            <td th:text="${employee.getPhone()}" class="px-6 py-4">
+
+            </td>
+
+
+            <td th:text="${employee.getEmail()}" class="px-6 py-4">
+
+            </td>
+            <td th:text="${employee.getJob().getName()}" class="px-6 py-4">
+
+            </td>
+            <td th:text="${employee.getDepartment().getName()}" class="px-6 py-4">
+
+            </td>
+
+
+            <td class="px-6 py-4">
+                <a th:href="'/employee/edit?id='+${employee.getId()}" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Edit </a>
+
+                | <a th:href="'/employee/delete?id='+${employee.getId()}" class="font-medium text-red-600 dark:text-red-500 hover:underline">Delete</a>
+
+            </td>
+        </tr>
+
+        </tbody>
+    </table>
+</div>
+
+</div>
+
+
+</body>
+</html>

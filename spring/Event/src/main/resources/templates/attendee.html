@@ -1,0 +1,126 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+<div th:insert="~{header}"></div>
+
+<hr>
+<h1 class="text-5xl text-center my-12">
+    Attendee Information
+</h1>
+
+<form class="max-w-md mx-auto my-4" method="post" action="/att/create">
+
+    <div class="grid md:grid-cols-2 md:gap-6">
+        <div class="relative z-0 w-full mb-5 group">
+            <input type="text" name="name" id="name"
+                   class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-black dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+                   placeholder="" required/>
+            <label for="name"
+                   class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">
+                Name</label>
+        </div>
+        <div class="relative z-0 w-full mb-5 group">
+            <input type="text" name="email" id="email"
+                   class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-black dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+                   placeholder="" required/>
+            <label for="email"
+                   class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">
+                Email</label>
+        </div>
+        <div class="relative z-0 w-full mb-5 group">
+            <input type="text" name="phone" id="phone"
+                   class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-black dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+                   placeholder="" required/>
+            <label for="phone"
+                   class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">
+                Phone</label>
+        </div>
+
+        <div class="relative z-0 w-full mb-5 group">
+            <select name="event_id"
+                    class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-black dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer">
+                <option value="">Event</option>
+                <th:block th:each="e:${ev}">
+                    <option th:value="${e.getId()}" th:text="${e.getName()}"></option>
+                </th:block>
+
+            </select>
+
+            <label for="event_id"
+                   class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Event Id
+            </label>
+        </div>
+    </div>
+    <button type="submit"
+            class="text-white bg-blue-700 hover:bg-orange-800 focus:ring-4 focus:outline-none focus:ring-red-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-red-600 dark:hover:bg-orange-700 dark:focus:ring-red-800">
+        Submit
+    </button>
+</form>
+<hr>
+
+<div class="relative overflow-x-auto shadow-md sm:rounded-lg">
+    <table class="w-full text-sm text-left rtl:text-right text-gray-500 ">
+        <thead class="text-xs text-gray-700 uppercase bg-gray-50 ">
+        <tr>
+            <th scope="col" class="px-6 py-3">
+                ID
+            </th>
+            <th scope="col" class="px-6 py-3">
+                Name
+            </th>
+            <th scope="col" class="px-6 py-3">
+                Email
+            </th>
+            <th scope="col" class="px-6 py-3">
+                Phone
+            </th>
+            <th scope="col" class="px-6 py-3">
+                Event Id
+            </th>
+
+            <th scope="col" class="px-6 py-3">
+                Action
+            </th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="a:${att}"
+            class="odd:bg-white odd:dark:bg-gray-900 even:bg-gray-50 even:dark:bg-gray-800 border-b dark:border-gray-700">
+            <th th:text="${a.getId()}" scope="row"
+                class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+
+            </th>
+            <td th:text="${a.getName()}" class="px-6 py-4">
+
+            </td>
+            <td th:text="${a.getEmail()}" class="px-6 py-4">
+
+            </td>
+            <td th:text="${a.getPhone()}" class="px-6 py-4">
+
+            </td>
+            <td th:text="${a.getEvent().getName()}" class="px-6 py-4">
+
+            </td>
+
+            <td class="px-6 py-4">
+                <a th:href="'/attendees/edit?id='+${a.getId()}"
+                   class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Edit </a>
+
+                | <a th:href="'/attendees/delete?id='+${a.getId()}"
+                     class="font-medium text-red-600 dark:text-red-500 hover:underline">Delete</a>
+
+            </td>
+        </tr>
+
+        </tbody>
+    </table>
+</div>
+<div th:insert="~{footer}"></div>
+</body>
+</html>

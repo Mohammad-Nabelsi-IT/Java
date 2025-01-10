@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="dd5e3494-1956-4f52-89c4-79e30015e925" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Java-File.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/AnimatedCircles.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Banner.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/BookInventory.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Clock.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Conference.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ExpenseTracker.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/FileReadWriteExample.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/FrameNewFile.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/MyThreadOne.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ReadeFile.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ThreadTow.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ToDoListApp.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/WithOutThread.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/WriteFile.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 3
+}</component>
+  <component name="ProjectId" id="2jH4szzpV1F1j0d2loGjmjnW07H" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+    <option name="showScratchesAndConsoles" value="false" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.AnimatedCircles.executor&quot;: &quot;Run&quot;,
+    &quot;Application.Banner.executor&quot;: &quot;Run&quot;,
+    &quot;Application.BookInventory.executor&quot;: &quot;Run&quot;,
+    &quot;Application.Clock.executor&quot;: &quot;Run&quot;,
+    &quot;Application.Conference.executor&quot;: &quot;Run&quot;,
+    &quot;Application.ExpenseTracker.executor&quot;: &quot;Run&quot;,
+    &quot;Application.ExpenseTrackerNew.executor&quot;: &quot;Run&quot;,
+    &quot;Application.FileReadWriteExample.executor&quot;: &quot;Run&quot;,
+    &quot;Application.FrameNewFile.executor&quot;: &quot;Run&quot;,
+    &quot;Application.MyThreadOne.executor&quot;: &quot;Run&quot;,
+    &quot;Application.NewBanner.executor&quot;: &quot;Run&quot;,
+    &quot;Application.ReadeFile.executor&quot;: &quot;Run&quot;,
+    &quot;Application.ThreadTow.executor&quot;: &quot;Run&quot;,
+    &quot;Application.ToDoListApp.executor&quot;: &quot;Run&quot;,
+    &quot;Application.WithOutThread.executor&quot;: &quot;Run&quot;,
+    &quot;Application.WriteFile.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.general&quot;
+  }
+}</component>
+  <component name="RunManager" selected="Application.Banner">
+    <configuration name="Banner" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Banner" />
+      <module name="Java-File" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MyThreadOne" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="MyThreadOne" />
+      <module name="Java-File" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ReadeFile" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="ReadeFile" />
+      <module name="Java-File" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="WriteFile" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="WriteFile" />
+      <module name="Java-File" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.Banner" />
+        <item itemvalue="Application.MyThreadOne" />
+        <item itemvalue="Application.ReadeFile" />
+        <item itemvalue="Application.WriteFile" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="dd5e3494-1956-4f52-89c4-79e30015e925" name="Changes" comment="" />
+      <created>1721030880156</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1721030880156</updated>
+    </task>
+    <servers />
+  </component>
+</project>

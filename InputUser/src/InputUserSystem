@@ -1,0 +1,37 @@
+public class InputUserSystem {
+    public static void main(String[] args) {
+        // terminal same cmd same console
+        String inputCurrentYear = System.console().readLine("Enter Current Year :");
+        int currentYear = Integer.parseInt(inputCurrentYear);
+
+
+        String inputDateOfBirth = System.console().readLine("Enter Date Of Birth : ");
+        int dateOfBirth = Integer.parseInt(inputDateOfBirth);
+
+        int age = currentYear - dateOfBirth;
+        System.out.printf("age : %d %n", age);
+
+    }
+    catch (NullPointerException pointer) {
+                 System.out.printf("can't run IDE System.console() 🥲  %n");
+
+             } catch (ArithmeticException error) {
+                 System.out.printf("please enter date of birth greater than 0 😇 %n");
+             } catch (Exception error) {
+                 // general
+                 System.out.printf("error  General : %s %n ", error);
+             }
+             System.out.println("----- new program -----");
+
+                try {
+                     String fName = System.console().readLine("Enter first name :");
+                     String lName = System.console().readLine("Enter last name :");
+                     System.out.printf("full name :  %s %s ", fName, lName);
+                 } catch (Exception error) {
+                     System.out.printf("error : %s  %n", error.getMessage());
+                 } finally {
+                     System.out.printf("Goodbye take care 👋 %n ");
+
+
+
+}

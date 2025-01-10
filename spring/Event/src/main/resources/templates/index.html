@@ -1,0 +1,36 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+<img src="/opera.webp" class="w-full h-[550px]">
+<h1 class="text-5xl text-center my-12">Welcome To Main Event</h1>
+
+<div class="text-center m-6 py-7">
+    <a href="/ev/view" class="text-xl btn btn-sm bg-green-700 text-white p-2 ">Event</a>
+    <a href="/att/show" class="text-xl btn btn-sm bg-green-700 text-white p-2  ">Attendee</a>
+</div>
+<!--==================================================-->
+<div class="grid grid-cols-4 p-6 ">
+    <div th:each="ev:${events}" class="border shadow-lg text-xl p-5 rounded hover:bg-green-100">
+        <ul>
+            <li>Event Name :<span th:text="${ev.getName()}"></span></li>
+            <li>Date :</li>
+            <li>Time :</li>
+            <li>Venue :</li>
+            <li>Capacity :</li>
+        </ul>
+    </div>
+</div>
+
+
+
+<!--==================================================-->
+<div th:insert="~{footer}"></div>
+
+
+</body>
+</html>

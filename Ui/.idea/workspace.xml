@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="0d862eee-0d4b-47ff-af0c-bb804129e631" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Calcu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Calcu.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Conference.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Conference.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ContactFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ContactFrame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ContactFrame2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ContactFrame2.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/DrawingClass.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DrawingClass.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/DrawingClass2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DrawingClass2.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/EmployeeManagementSystem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/EmployeeManagementSystem.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Frame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Frame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Frame1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Frame1.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Frame2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Frame2.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Frame3.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Frame3.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Frame4.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Frame4.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Frame5.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Frame5.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Frame6.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Frame6.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/HotelReservation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/HotelReservation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/LibraryBook.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/LibraryBook.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/LibraryBook2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/LibraryBook2.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/MenuDemo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MenuDemo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/MouseEvent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MouseEvent.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/MyFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MyFrame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/SimpleCalculator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/SimpleCalculator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/StudentRegistrationFromApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/StudentRegistrationFromApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/SwingUiTask.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/SwingUiTask.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/TableOne.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/TableOne.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/TableTow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/TableTow.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/XOGame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/XOGame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/XOTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/XOTest.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 5
+}</component>
+  <component name="ProjectId" id="2h2eCdrX35qHqyX25Pg6y6eA5zt" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+    <option name="showScratchesAndConsoles" value="false" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.Calcu.executor": "Run",
+    "Application.Conference.executor": "Run",
+    "Application.ContactFrame.executor": "Run",
+    "Application.ContactFrame2.executor": "Run",
+    "Application.DrawingClass (1).executor": "Run",
+    "Application.DrawingClass (2).executor": "Run",
+    "Application.DrawingClass.executor": "Run",
+    "Application.EmployeeManagementSystem.executor": "Run",
+    "Application.Frame1.executor": "Run",
+    "Application.Frame2.executor": "Run",
+    "Application.Frame3.executor": "Run",
+    "Application.Frame4.executor": "Run",
+    "Application.Frame5.executor": "Run",
+    "Application.Frame6.executor": "Run",
+    "Application.HotelReservation.executor": "Run",
+    "Application.LibraryBook.executor": "Run",
+    "Application.LibraryBook2.executor": "Run",
+    "Application.Main.executor": "Run",
+    "Application.MenuDemo.executor": "Run",
+    "Application.MouseEvent.executor": "Run",
+    "Application.MyFrame.executor": "Run",
+    "Application.SimpleCalculator.executor": "Run",
+    "Application.StudentRegistrationFromApplication.executor": "Run",
+    "Application.SwingUi.executor": "Run",
+    "Application.SwingUiTask.executor": "Run",
+    "Application.TableOne.executor": "Run",
+    "Application.TableTow.executor": "Run",
+    "Application.XOGame.executor": "Run",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "git-widget-placeholder": "main",
+    "kotlin-language-version-configured": "true",
+    "onboarding.tips.debug.path": "C:/java/java-level-one/Ui/src/Main.java",
+    "settings.editor.selected.configurable": "advanced.settings"
+  }
+}]]></component>
+  <component name="RunManager" selected="Application.Conference">
+    <configuration name="Conference" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Conference" />
+      <module name="Ui" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="DrawingClass (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="DrawingClass" />
+      <module name="Ui" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="DrawingClass (2)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="DrawingClass" />
+      <module name="Ui" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="DrawingClass" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="DrawingClass" />
+      <module name="Ui" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="EmployeeManagementSystem" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="EmployeeManagementSystem" />
+      <module name="Ui" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.Conference" />
+        <item itemvalue="Application.DrawingClass (2)" />
+        <item itemvalue="Application.DrawingClass (1)" />
+        <item itemvalue="Application.DrawingClass" />
+        <item itemvalue="Application.EmployeeManagementSystem" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="0d862eee-0d4b-47ff-af0c-bb804129e631" name="Changes" comment="" />
+      <created>1716796476084</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1716796476084</updated>
+    </task>
+    <servers />
+  </component>
+</project>

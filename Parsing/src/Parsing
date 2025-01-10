@@ -1,0 +1,44 @@
+// add lecture 56 first hours
+
+public class Parsing {
+    public static void main(String[] args) {
+        // 1 Collection
+        String currentYear = "2024";
+        String dateOfBirth = "1990";
+        String age = currentYear + dateOfBirth;
+        System.out.printf("age : %s %n", age); // 20241990
+
+        // 2 String convert Integer
+        int currentYearParse = Integer.parseInt(currentYear);
+        int dateOfBirthParse = Integer.parseInt(dateOfBirth);
+        int resultAge = currentYearParse - dateOfBirthParse;
+        System.out.printf("age : %d %n", resultAge); // 33
+
+        // 3 String convert Double
+        String n1 = "23.33";
+        String n2 = "232.77";
+        String sum = n1 + n2;
+        System.out.printf("sum : %s %n", sum); // 23.33232.77
+
+        double n1Parse = Double.parseDouble(n1);
+        double n2Parse = Double.parseDouble(n2);
+        double result = n1Parse + n2Parse;
+        System.out.printf("sum : %.2f %n", result); // 256.10
+
+        // 4 double convert int
+        double grade1 = 88.4;
+        double grade2 = 90.3;
+
+        // used cascade
+        int resultGrade = (int) (grade1 + grade2);
+        int x = 0;
+        // x = x + (int) grade1;
+        // x +=(int) grade1;
+        x += grade1;
+        // double x =  5 + 10;
+        //  int resultGrade2 = Integer.parseInt(grade1); ❌
+        System.out.printf("Grade1 : %.2f + Grade2 : %.2f = %d %n", grade1, grade2, resultGrade);
+
+
+    }
+}

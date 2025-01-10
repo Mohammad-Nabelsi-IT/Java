@@ -1,0 +1,125 @@
+<!doctype html>
+<html>
+<head class="mx-3">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+<div th:insert="~{header}"></div>
+
+<h1 class="text-5xl text-center my-12">
+
+    <hr>
+    <h1 class="text-5xl text-center my-12">
+        Enrollments Information
+    </h1>
+    <form class="max-w-md mx-auto my-4" method="post" action="enrollments/create">
+
+        <div class="relative z-0 w-full mb-5 group">
+            <select name="student_id"
+                    class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-black dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer">
+                <option>Student Id</option>
+                <th:block th:each="s:${students}">
+                    <option th:value="${students.getId()}" th:text="${students.getName()}"></option>
+                </th:block>
+
+            </select>
+
+            <label for="Student"
+                   class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Student
+            </label>
+        </div>
+        <div class="relative z-0 w-full mb-5 group">
+            <select name="course_id"
+                    class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-black dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer">
+                <option>Course Id</option>
+                <th:block th:each="c:${courses}">
+                    <option th:value="${courses.getId()}" th:text="${courses.getName()}"></option>
+                </th:block>
+
+            </select>
+
+            <label for="Course"
+                   class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Course
+            </label>
+        </div>
+        <div class="relative z-0 w-full mb-5 group">
+            <select name="enrollment_date"
+                    class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-black dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer">
+                <option>Enrollment Date</option>
+                <th:block th:each="e:${enrollments}">
+                    <option th:value="${enrollments.getId()}" th:text="${enrollments.getName()}"></option>
+                </th:block>
+
+            </select>
+
+            <label for="Enrollment"
+                   class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Enrollment
+            </label>
+        </div>
+
+
+        <!--        <div class="grid md:grid-cols-2 md:gap-6">-->
+
+        <!--        </div>-->
+        <button type="submit"
+                class="text-white bg-blue-700 hover:bg-orange-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-orange-700 dark:focus:ring-blue-800">
+            Submit
+        </button>
+    </form>
+
+    <div class="relative overflow-x-auto shadow-md sm:rounded-lg">
+        <table class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
+            <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+            <tr>
+                <th scope="col" class="px-6 py-3">
+                    ID
+                </th>
+                <th scope="col" class="px-6 py-3">
+                    Student Id
+                </th>
+                <th scope="col" class="px-6 py-3">
+                    Course Id
+                </th>
+                <th scope="col" class="px-6 py-3">
+                    Enrollment Date
+                </th>
+
+                <th scope="col" class="px-6 py-3">
+                    Action
+                </th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="enrollments:${enrollments}"
+                class="odd:bg-white odd:dark:bg-gray-900 even:bg-gray-50 even:dark:bg-gray-800 border-b dark:border-gray-700">
+                <th th:text="${enrollments.getId()}" scope="row"
+                    class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+
+                </th>
+                <td th:text="${enrollments.getStudentId()}" class="px-6 py-4">
+
+                </td>
+                <td th:text="${enrollments.getCourseId()}" class="px-6 py-4">
+
+                </td>
+                <td th:text="${enrollments.getEnrollmentDate()}" class="px-6 py-4">
+
+                </td>
+
+                <td class="px-6 py-4">
+                    <a href="'/enrollments/edit?id='+${enrollments.getId()}"
+                       class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Edit </a>
+
+                    | <a th:href="'/enrollments/delete?id='+${enrollments.getId()}"
+                         class="font-medium text-red-600 dark:text-red-500 hover:underline">Delete</a>
+
+                </td>
+            </tr>
+
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>
