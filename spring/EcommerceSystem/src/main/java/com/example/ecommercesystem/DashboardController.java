@@ -12,11 +12,6 @@ public class DashboardController {
     }
 
 
-    @GetMapping("/logout")
-    public String logout() {
-        return "logout";
-    }
-
     @GetMapping("/user_add")
     public String user_add() {
         return "user_add";

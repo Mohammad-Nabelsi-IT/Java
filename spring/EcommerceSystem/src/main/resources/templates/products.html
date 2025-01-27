@@ -43,11 +43,11 @@
             <div class="p-4">
                 <h3 th:text="${product.getName()}" class="text-lg font-bold text-gray-800"></h3>
                 <p th:text="${product.getPrice()}" class="text-gray-600"></p>
-                <button
+                <a
                         th:href="'/cart/add?id='+${product.getId()}"   class="mt-4 bg-green-500 text-black py-2 px-4 py-2 bg-orange-500 text-black rounded hover:bg-orange-700 text-white w-full">
                     Add
                     to Cart
-                </button>
+                </a>
 
             </div>
         </div>

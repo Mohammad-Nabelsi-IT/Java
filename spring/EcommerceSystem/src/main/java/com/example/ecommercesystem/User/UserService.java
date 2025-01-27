@@ -12,6 +12,16 @@ public class UserService {
         this.userRepository = userRepository;
     }
 
+    public User findUserWithCartById(Integer userId) {
+        return userRepository.findById(userId).map(
+                user -> {
+                    // Access the cart to initialize it (lazy loading)
+                    user.getCart();
+                    // Ensure cart is loaded
+                    return user; }
+        ).orElse(null);
+    }
+
     public User createUser(User user) {
         return userRepository.save(user);
     }

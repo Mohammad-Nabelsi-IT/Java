@@ -1,6 +1,10 @@
 package com.example.ecommercesystem.Cart;
 
+import com.example.ecommercesystem.CartItems.CartItems;
+import com.example.ecommercesystem.User.User;
 import jakarta.persistence.*;
+
+import java.util.List;
 
 @Entity
 @Table(name = "cart")
@@ -8,14 +12,30 @@ public class Cart {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
-    @Column(name = "user_id")
-    private int userId;
 
 
-    public Cart(int id, int userId) {
-        this.id = id;
-        this.userId = userId;
+    @ManyToOne
+    private User user;
+    @OneToMany(mappedBy = "cart")
+    private List<CartItems> cartItemsList;
+
+    public List<CartItems> getCartItemsList() {
+        return cartItemsList;
     }
+
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
+    }
+
+    public void setCartItemsList(List<CartItems> cartItemsList) {
+        this.cartItemsList = cartItemsList;
+    }
+
+
 
     public Cart() {
 
@@ -29,19 +49,6 @@ public class Cart {
         this.id = id;
     }
 
-    public int getUserId() {
-        return userId;
-    }
 
-    public void setUserId(int userId) {
-        this.userId = userId;
-    }
 
-    @Override
-    public String toString() {
-        return "Cart{" +
-                "id=" + id +
-                ", userId=" + userId +
-                '}';
-    }
 }

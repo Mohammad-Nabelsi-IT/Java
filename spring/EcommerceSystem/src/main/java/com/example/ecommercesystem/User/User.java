@@ -1,6 +1,10 @@
 package com.example.ecommercesystem.User;
 
+import com.example.ecommercesystem.Cart.Cart;
+import com.example.ecommercesystem.Order.Order;
 import jakarta.persistence.*;
+
+import java.util.List;
 
 @Entity
 @Table(name = "users")
@@ -17,6 +21,12 @@ public class User {
     @Column(name = "role")
     private String role;
 
+    @OneToMany(mappedBy = "user")
+    private List<Order> orders;
+
+    @OneToMany(mappedBy = "user")
+    private List<Cart> cart;
+
     public User() {
     }
 
@@ -31,6 +41,22 @@ public class User {
 
     public String getPassword() {
         return password;
+    }
+
+    public List<Order> getOrders() {
+        return orders;
+    }
+
+    public void setOrders(List<Order> orders) {
+        this.orders = orders;
+    }
+
+    public List<Cart> getCart() {
+        return cart;
+    }
+
+    public void setCart(List<Cart> cart) {
+        this.cart = cart;
     }
 
     public void setPassword(String password) {

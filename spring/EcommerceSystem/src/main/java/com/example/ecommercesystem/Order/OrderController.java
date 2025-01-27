@@ -28,7 +28,7 @@ public class OrderController {
             , @RequestParam(value = "total_price") double total_price
             , @RequestParam(value = "order_status") String order_status) {
         Order order = new Order();
-        order.setUser_id(user_id);
+//        order.setUser_id(user_id);
         order.setOrder_date(order_date);
         order.setTotal_price(total_price);
         order.setOrder_status(order_status);
@@ -63,7 +63,7 @@ public class OrderController {
             , @RequestParam(value = "total_price") double total_price
             , @RequestParam(value = "order_status") String order_status) {
         Order order = orderService.getOrder(id);
-        order.setUser_id(user_id);
+//        order.setUser_id(user_id);
         order.setOrder_date(order_date);
         order.setTotal_price(total_price);
         order.setOrder_status(order_status);

@@ -11,74 +11,7 @@
 
 <body class="bg-gray-200">
 
-    <!-- Navbar -->
-    <nav class="fixed w-full bg-gradient-to-r from-black to-orange-200">
-        <div class="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8 sm:py-1 py-3">
-            <div class="relative flex h-16 sm:flex-row flex-col items-center justify-between">
-
-                <div
-                    class="flex sm:flex-row flex-col flex-1 items-center justify-center sm:items-stretch sm:justify-start">
-                    <div class="flex   shrink-0 items-center sm:py-1 py-4">
-
-                        <img class="h-8 w-auto" src="/icons/weight (2).png" alt="Your Company">
-                        <h1 class="text-2xl text-white px-8">POWER MUSCLE</h1>
-                    </div>
-                    <div class="hidden sm:ml-6 sm:block">
-                        <div class="flex space-x-4">
-                            <!-- Current: " -->
-                            <a href="/"
-                                class="rounded-md px-3 py-2 text-sm font-medium text-orange-400 text-xl hover:bg-gray-700 hover:text-white">Home</a>
-                            <a href="/products"
-                                class="rounded-md px-3 py-2 text-sm font-medium text-white hover:bg-gray-700 hover:text-white">Products</a>
-                            <a href="/users"
-                                class="rounded-md px-3 py-2 text-sm font-medium text-white hover:bg-gray-700 hover:text-white">Users</a>
-                            <a href="/dashboard"
-                                class="rounded-md px-3 py-2 text-sm font-medium text-white hover:bg-gray-700 hover:text-white">Dashboard</a>
-                            <a href="/login"
-                                class="rounded-md px-3 py-2 text-sm font-medium text-white hover:bg-gray-700 hover:text-white">Login</a>
-                            <a href="/register"
-                                class="rounded-md px-3 py-2 text-sm font-medium text-white hover:bg-gray-700 hover:text-white">Register</a>
-
-                        </div>
-                    </div>
-                </div>
-
-                <form class="flex items-center space-x-2">
-                    <input type="search" placeholder="Search"
-                        class="px-4 py-2 border rounded focus:outline-none focus:ring-2 focus:ring-orange-400">
-                    <button type="submit"
-                        class="border border-black px-4 py-2 bg-orange-400 text-black rounded hover:bg-orange-600 focus:outline-none focus:ring-2 focus:ring-green-300">
-                        Search
-                    </button>
-                    <a href="/cart"
-                        class="rounded-md px-3 py-2 text-sm font-medium text-white hover:bg-orange-500 hover:text-white mx-2"><img src="/icons/forklift.png" alt=""></a>
-                </form>
-
-            </div>
-        </div>
-        </div>
-        </div>
-
-        <!-- Mobile menu, show/hide based on menu state. -->
-        <div class="sm:hidden" id="mobile-menu">
-            <div class=" px-2 pb-3 pt-12">
-                <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
-
-                <a href="/"
-                    class="block rounded-md px-3 py-1 text-base font-medium text-white hover:bg-gray-700 hover:text-white">Home</a>
-                <a href="/products"
-                    class="block rounded-md px-3 py-1 text-base font-medium text-white hover:bg-gray-700 hover:text-white">Products</a>
-                <a href="/users"
-                    class="block rounded-md px-3 py-1 text-base font-medium text-white hover:bg-gray-700 hover:text-white">Users</a>
-                <a href="/dashboard"
-                    class="block rounded-md px-3 py-1 text-base font-medium text-white hover:bg-gray-700 hover:text-white">Dashboard</a>
-                <a href="/login"
-                    class="block rounded-md px-3 py-1 text-base font-medium text-white hover:bg-gray-700 hover:text-white">Login</a>
-                <a href="/register"
-                    class="block rounded-md px-3 py-1 text-base font-medium text-white hover:bg-gray-700 hover:text-white">Register</a>
-            </div>
-        </div>
-    </nav>
+<div th:insert="~{nav-header}"></div>
 
 <!-- cart -->
 <div class="relative z-10" aria-labelledby="slide-over-title" role="dialog" aria-modal="true">
@@ -126,7 +59,7 @@
                 <div class="mt-8">
                   <div class="flow-root">
                     <ul role="list" class="-my-6 divide-y divide-gray-200">
-                      <li class="flex py-6">
+                      <li th:each="cartItem :${cartItems}" class="flex py-6">
                         <div class="size-24 shrink-0 overflow-hidden rounded-md border border-gray-200">
                           <img src="/images/dambels1.jpg" alt="Salmon orange fabric pouch with match zipper, gray zipper pull, and adjustable hip belt." class="size-full object-cover">
                         </div>
@@ -135,45 +68,22 @@
                           <div>
                             <div class="flex justify-between text-base font-medium text-gray-900">
                               <h3>
-                                <a href="#">Dumbbells</a>
+                                <a th:text="${cartItem.getProduct().getName()}"></a>
                               </h3>
-                              <p class="ml-4">$450.00</p>
+                              <p class="ml-4" th:text="${cartItem.getProduct().getPrice()}"></p>
                             </div>
-                            <p class="mt-1 text-sm text-gray-500">Salmon</p>
+                            <p class="mt-1 text-sm text-gray-500" th:text="${cartItem.getProduct().getDescription()}"></p>
                           </div>
                           <div class="flex flex-1 items-end justify-between text-sm">
-                            <p class="text-gray-500">Qty 1</p>
+                            <p class="text-gray-500">1</p>
   
                             <div class="flex">
-                              <button type="button" class="font-medium text-red-500 hover:text-indigo-500">Remove</button>
+                              <a th:href="'/cart/deleteItem?id='+${cartItem.getId()}" type="button" class="font-medium text-red-500 hover:text-indigo-500">Remove</a>
                             </div>
                           </div>
                         </div>
                       </li>
-                      <li class="flex py-6">
-                        <div class="size-24 shrink-0 overflow-hidden rounded-md border border-gray-200">
-                          <img src="/images/power.jpg" alt="Front of satchel with blue canvas body, black straps and handle, drawstring top, and front zipper pouch." class="size-full object-cover">
-                        </div>
-  
-                        <div class="ml-4 flex flex-1 flex-col">
-                          <div>
-                            <div class="flex justify-between text-base font-medium text-gray-900">
-                              <h3>
-                                <a href="#">Power</a>
-                              </h3>
-                              <p class="ml-4">$5600.00</p>
-                            </div>
-                            <p class="mt-1 text-sm text-gray-500">Blue</p>
-                          </div>
-                          <div class="flex flex-1 items-end justify-between text-sm">
-                            <p class="text-gray-500">Qty 1</p>
-  
-                            <div class="flex">
-                              <button type="button" class="font-medium text-red-500 hover:text-indigo-500">Remove</button>
-                            </div>
-                          </div>
-                        </div>
-                      </li>
+
   
                       <!-- More products... -->
                     </ul>

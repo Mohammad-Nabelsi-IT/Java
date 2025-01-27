@@ -1,0 +1,81 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Orders Management</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-grey-100">
+<!-- Header -->
+<div th:insert="~{nav-header-dashboard}"></div>
+
+<main class="p-12 min-h-screen">
+
+    <div class="bg-white p-6 shadow-lg rounded-lg">
+        <table class="min-w-full border-collapse border border-gray-300">
+            <thead>
+            <tr class="bg-gradient-to-r from-orange-200 to-black text-white">
+                <th class="border border-gray-300 px-4 py-2 text-center">Order #</th>
+                <th class="border border-gray-300 px-4 py-2">Customer</th>
+                <th class="border border-gray-300 px-4 py-2 text-center">Date</th>
+                <th class="border border-gray-300 px-4 py-2 text-center">total price</th>
+
+                <th class="border border-gray-300 px-4 py-2 text-center">Status</th>
+
+            </tr>
+            </thead>
+            <tbody>
+            <!-- view orders -->
+            <tr
+                    class="odd:bg-white even:bg-gray-50 border-b">
+                <td th:text="${order.getOrderId()}"
+                    class="border border-gray-300 px-4 py-2 text-center"></td>
+                <td th:text="${order.getUser().getUsername()}"
+                    class="border border-gray-300 px-4 py-2"></td>
+                <td th:text="${order.getOrderTime()}"
+                    class="border border-gray-300 px-4 py-2 text-center"></td>
+                <td th:text="${order.getTotalPrice()}"
+                    class="border border-gray-300 px-4 py-2 text-center"></td>
+
+                <td th:text="${order.getOrderStatus()}"
+                    class="border border-gray-300 px-4 py-2 text-center"
+                    th:classappend="${order.getOrderStatus() == 'Delivered' ? 'text-green-600 font-semibold' : (order.getOrderStatus() == 'Processing' ? 'text-yellow-600 font-semibold' : 'text-red-600 font-semibold')}">
+                </td>
+
+            </tr>
+            </tbody>
+        </table>
+
+        <table class="min-w-full border-collapse border border-gray-300 mt-8">
+            <thead>
+            <tr  class="bg-gradient-to-r from-orange-200 to-black text-white">
+                <th class="border border-gray-300 px-4 py-2 text-center">#</th>
+                <th class="border border-gray-300 px-4 py-2">product</th>
+                <th class="border border-gray-300 px-4 py-2 text-center">quantity</th>
+                <th class="border border-gray-300 px-4 py-2 text-center">price</th>
+
+            </tr>
+            </thead>
+            <tbody>
+
+            <tr th:each="orderItem ,state : ${order.getOrderItemsList()}"
+                class="odd:bg-white even:bg-gray-50 border-b">
+                <td th:text="${state.index + 1}"
+                    class="border border-gray-300 px-4 py-2 text-center"></td>
+                <td th:text="${orderItem.getProduct().getName()}"
+                    class="border border-gray-300 px-4 py-2"></td>
+                <td th:text="${orderItem.getQuantity()}"
+                    class="border border-gray-300 px-4 py-2 text-center"></td>
+                <td th:text="${orderItem.getPrice()}"
+                    class="border border-gray-300 px-4 py-2 text-center"></td>
+
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</main>
+
+<!-- Footer -->
+<div th:insert="~{footer}"></div>
+</body>
+</html>
