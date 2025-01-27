@@ -1,7 +1,10 @@
 package com.example.ecommercesystem.User;
 
+import org.springframework.stereotype.Service;
+
 import java.util.List;
 
+@Service
 public class UserService {
     private final UserRepository userRepository;
 
@@ -13,7 +16,7 @@ public class UserService {
         return userRepository.save(user);
     }
 
-    public void removeUser(User user) {
+    public void deleteUser(User user) {
         userRepository.delete(user);
     }
 
@@ -21,7 +24,11 @@ public class UserService {
         return userRepository.findById(id).get();
     }
 
-//    public List<User> getAllUsers() {
-//        return  userRepository.findAll();
-//    }
+    public List<User> getUsers() {
+        return (List<User>) userRepository.findAll();
+    }
+
+    public User getByEmail(String email) {
+        return userRepository.findByEmail(email);
+    }
 }

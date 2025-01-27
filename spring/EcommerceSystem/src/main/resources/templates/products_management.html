@@ -1,0 +1,100 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <style>
+        .text-stroke {
+            -webkit-text-stroke: 1px black;
+        }
+
+    </style>
+</head>
+
+<body class="bg-gray-200">
+
+<!-- Navbar -->
+<div th:insert="~{nav-header-dashboard}"></div>
+
+<!-- content -->
+<div class="container mx-auto py-8 lg:px-16 px-6">
+
+    <div class=" p-4 mx-2 flex justify-between pt-24">
+        <!--  page header -->
+        <h1 class="text-3xl font-bold mb-6 text-orange-500 text-stroke">Products Management</h1>
+        <a href="/products/add"
+           class="mt-1 py-2 px-4 py-2 bg-orange-500 text-black rounded my-4 hover:bg-orange-700 text-white">
+            Add New Product</a>
+    </div>
+
+
+    <!-- products -->
+    <div class="bg-orange-400 shadow-md rounded-lg p-2 mt-8">
+        <h2 class="text-2xl font-bold text-gray-700 py-2">Products</h2>
+        <div class="overflow-x-auto">
+            <table class="min-w-full bg-white">
+                <thead class="bg-gray-300">
+                <tr>
+                    <th class="py-3 px-4 text-left text-sm font-medium">#</th>
+                    <th class="py-3 px-4 text-left text-sm font-medium">Name</th>
+                    <th class="py-3 px-4 text-left text-sm font-medium">Description</th>
+                    <th class="py-3 px-4 text-left text-sm font-medium">Price</th>
+                    <th class="py-3 px-4 text-left text-sm font-medium">Qty</th>
+                    <th class="py-3 px-4 text-left text-sm font-medium">Image</th>
+                    <th class="py-3 px-4 text-center text-sm font-medium">Actions</th>
+                </tr>
+
+                </thead>
+                <tbody>
+                <!-- exambel order -->
+
+                <tr th:each="p:${products}" class="border-b hover:bg-gray-50">
+                    <th th:text="${p.getId()}" scope="row"
+                        class="py-3 px-4">
+
+                    </th>
+                    <td th:text="${p.getName()}" class="py-3 px-4">
+
+                    </td>
+
+                    <td th:text="${p.getDescription()}" class="py-3 px-4">
+
+                    </td>
+                    <td th:text="${p.getPrice()}" class="py-3 px-4">
+
+                    </td>
+                    <td th:text="${p.getQuantity()}" class="py-3 px-4">
+
+                    </td>
+                    <td class="py-3 px-4">
+                        <img class="w-20" th:src="${p.getImage()}">
+                    </td>
+                    <td class="py-3 px-4 text-center">
+                        <a th:href="'/products/view?id='+${p.getId()}"
+                           class="bg-blue-500 text-white px-2 py-1 rounded hover:bg-blue-600 text-sm">View
+                        </a>
+                        <a th:href="'/products/edit?id='+${p.getId()}"
+                           class="bg-green-500 text-white px-2 py-1 rounded hover:bg-green-600 text-sm">Edit
+                        </a>
+
+                        <a th:href="'/products/delete?id='+${p.getId()}"
+                           class="bg-red-500 text-white px-2 py-1 rounded hover:bg-red-600 text-sm">Delete
+                        </a>
+                    </td>
+
+                </tr>
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+    </div>
+</div>
+
+</body>
+</html>

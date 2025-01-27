@@ -1,0 +1,74 @@
+<!doctype html>
+<html>
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+
+
+</head>
+
+
+<style>
+    #vid {
+        width: 100%;
+        height: auto;
+        position: fixed;
+        z-index: -1;
+    }
+</style>
+
+<body>
+
+    <body>
+        <!-- Navbar -->
+        <div th:insert="~{nav-header}"></div>
+
+        <!-- Backgraund -->
+        <header class="">
+            <video id="vid" src="/videos/test3.mp4" autoplay loop muted>
+            </video>
+            <!-- <center class="">
+
+            </center> -->
+        </header>
+
+        <!-- =========================================================================== -->
+
+        <!-- Register -->
+        <div class="flex justify-center items-center min-h-screen pt-16">
+            <form class="bg-white p-6 rounded shadow-md w-96">
+                <h2 class="text-xl font-bold mb-4 text-center">Register</h2>
+                <label for="first_name" class="block text-sm/6 font-medium text-gray-900">First
+                    Name</label>
+                <input type="first_name" placeholder="first_name"
+                    class="w-full p-2 border border-gray-300 rounded mb-3" />
+                <label for="last_name" class="block text-sm/6 font-medium text-gray-900">Last
+                    Name</label>
+                <input type="last_name" placeholder="last_name"
+                    class="w-full p-2 border border-gray-300 rounded mb-3" />
+                <label for="email" class="block text-sm/6 font-medium text-gray-900">Email</label>
+                <input type="email" placeholder="Email" class="w-full p-2 border border-gray-300 rounded mb-3" />
+                <label for="passowrd" class="block text-sm/6 font-medium text-gray-900">Password
+                </label>
+                <input type="password" placeholder="password" class="w-full p-2 border border-gray-300 rounded mb-3" />
+                <label for="phone" class="block text-sm/6 font-medium text-gray-900">Phone
+                </label>
+                <input type="phone" placeholder="Phone" class="w-full p-2 border border-gray-300 rounded mb-3" />
+
+                <button
+                    class="w-full bg-orange-500 text-white py-2 rounded hover:bg-black text-orange-500 ">Register</button>
+                <p class="text-center text-sm text-gray-500 mt-3">
+                    You have an account? <a href="/login" class="text-blue-500 hover:underline">Login</a>
+                </p>
+            </form>
+        </div>
+
+
+        <!-- footer -->
+        <div th:insert="~{footer}"></div>
+    </body>
+
+</html>

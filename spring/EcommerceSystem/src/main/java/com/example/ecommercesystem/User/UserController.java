@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
-@RequestMapping("users")
+@RequestMapping("/users")
 public class UserController {
     private UserService userService;
 
@@ -24,36 +24,37 @@ public class UserController {
             , @RequestParam(value = "email") String email
             , @RequestParam(value = "role") String role) {
 
+
         User user = new User();
         user.setUser_name(user_name);
         user.setPassword(password);
         user.setEmail(email);
         user.setRole(role);
         userService.createUser(user);
-        return "redirect:/users/view";
+        return "redirect:/users";
     }
 
-    @GetMapping("/view")
-    public String view(Model model) {
-//        model.addAttribute("users", userService.getAllUsers());
-        return "users/view";
+    @GetMapping()
+    public String users(Model model) {
+        model.addAttribute("users", userService.getUsers());
+        return "users";
     }
 
-    @GetMapping("/remove")
-    public String remove(@RequestParam(value = "id") int id) {
+    @GetMapping("/delete")
+    public String delete(@RequestParam(value = "id") int id) {
         User user = userService.getUser(id);
-        userService.removeUser(user);
-        return "redirect:/users/view";
+        userService.deleteUser(user);
+        return "redirect:/users";
     }
 
     @GetMapping("/edit")
-    public String edit(Model model, @RequestParam(value = "id") int id) {
+    public String edit(@RequestParam(value = "id") int id ,Model model) {
         User user = userService.getUser(id);
         model.addAttribute("user", user);
-        return "users/edit";
+        return "users_edit";
     }
 
-    @GetMapping("update")
+    @PostMapping("update")
     public String update(@RequestParam(value = "id") int id
             , @RequestParam(value = "user_name") String user_name
             , @RequestParam(value = "password") String password
@@ -66,8 +67,12 @@ public class UserController {
         user.setEmail(email);
         user.setRole(role);
         user=userService.createUser(user);
-        return "redirect:/users/view";
+        return "redirect:/users";
 
+    }
+    @GetMapping("user_add")
+    public String user_add() {
+        return "/users/user_add";
     }
 
 

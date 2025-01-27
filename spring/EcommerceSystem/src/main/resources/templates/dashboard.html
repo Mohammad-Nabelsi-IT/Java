@@ -1,0 +1,103 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <style>
+        .text-stroke {
+            -webkit-text-stroke: 1px black;
+        }
+
+    </style>
+</head>
+
+<body class="bg-gray-200">
+
+<!-- Navbar -->
+<div th:insert="~{nav-header-dashboard}"></div>
+
+<!-- content -->
+<div class="container mx-auto py-8 lg:px-16 px-6">
+
+    <!--  page header -->
+    <h1 class="text-3xl font-bold mb-6 text-orange-500 pt-24 text-stroke">Welcome Admin</h1>
+
+    <!-- summary cards -->
+    <div id="cards" class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8 ">
+
+        <!-- users card -->
+        <div class="bg-red-500 shadow-md rounded-lg p-6">
+            <h2 class="text-xl font-bold text-white">Customers</h2>
+            <p class="text-3xl font-bold text-white my-4">170</p>
+            <a href="/users" class="text-black hover:underline">Manage Users ---></a>
+        </div>
+    </div>
+
+
+    <!-- order -->
+
+    <div class="bg-orange-400 shadow-md rounded-lg p-2">
+        <h2 class="text-2xl font-bold text-gray-700 py-2">Orders</h2>
+        <div class="overflow-x-auto">
+            <table class="min-w-full bg-white">
+                <thead class="bg-gray-300">
+                <tr>
+                    <th class="py-3 px-4 text-left text-sm font-medium">Order Id</th>
+                    <th class="py-3 px-4 text-left text-sm font-medium">Customer</th>
+                    <th class="py-3 px-4 text-left text-sm font-medium">Total</th>
+                    <th class="py-3 px-4 text-left text-sm font-medium">Date</th>
+                    <th class="py-3 px-4 text-left text-sm font-medium">Status</th>
+                    <th class="py-3 px-4 text-center text-sm font-medium">Actions</th>
+                </tr>
+
+                </thead>
+                <tbody>
+                <!-- exambel order -->
+                <tr class="border-b hover:bg-gray-50">
+                    <td class="py-3 px-4">#10121</td>
+                    <td class="py-3 px-4">Lara Deeb</td>
+                    <td class="py-3 px-4">$300.85</td>
+                    <td class="py-3 px-4">2023-09-25</td>
+                    <td class="py-3 px-4">
+                        <span class="bg-green-500 text-white px-2 py-1 rounded">Completed</span>
+                    </td>
+                    <td class="py-3 px-4 text-center">
+                        <button
+                                class="bg-blue-500 text-white px-2 py-1 rounded hover:bg-blue-600 text-sm">View
+                        </button>
+
+
+                        <button
+                                class="bg-green-500 text-white px-2 py-1 rounded hover:bg-green-600 text-sm">Edit
+                        </button>
+
+
+                        <button
+                                class="bg-red-500 text-white px-2 py-1 rounded hover:bg-red-600 text-sm">Delete
+                        </button>
+
+                    </td>
+                </tr>
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+
+    </div>
+
+
+</div>
+
+
+<!-- footer -->
+<div th:insert="~{footer}"></div>
+
+</body>
+
+</html>

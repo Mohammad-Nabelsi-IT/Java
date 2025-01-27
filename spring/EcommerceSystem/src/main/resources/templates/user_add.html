@@ -1,0 +1,63 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.tailwindcss.com"></script>
+
+</head>
+
+<body>
+  <!-- Navbar -->
+  <div th:insert="~{nav-header-dashboard}"></div>
+
+    <main class="container mx-auto" id="user_management">
+      <h2 class="text-2xl font-bold text-gray-800 mb-6">Users</h2>
+      <div class="grid grid-cols-1 gap-6">
+        <!-- Example-1-->
+        <div class="bg-white shadow-md rounded overflow-hidden ">
+          <div class="mx-2">
+        
+            <div class="flex justify-center items-center min-h-screen ">
+                <form class="bg-white p-6 rounded shadow-2xl w-96" method="post" action="users/add">
+                    <h2 class="text-xl font-bold mb-4 text-center">Add New User</h2>
+                    <label for="user_name" class="block text-sm/6 font-medium text-gray-900">User
+                        Name</label>
+                    <input name="user_name" placeholder="User Name"
+                        class="w-full p-2 border border-gray-300 rounded mb-3" />
+
+                    <label for="email" class="block text-sm/6 font-medium text-gray-900">Email</label>
+                    <input type="email" name="email" placeholder="Email" class="w-full p-2 border border-gray-300 rounded mb-3" />
+                    <label for="passord" class="block text-sm/6 font-medium text-gray-900">Password
+                    </label>
+                    <input type="password" name="password" placeholder="Password" class="w-full p-2 border border-gray-300 rounded mb-3" />
+                    <div class="mb-6">
+                      <label for="role" class="block text-m font-medium text-gray-900">Role</label>
+                      <select id="role" name="role"
+                          class="mt-2 p-4 w-full border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500" required>
+                          <option value="admin">Admin</option>
+                          <option value="user">User</option>
+                      </select>
+                  </div>
+    
+                    <button class="w-full bg-orange-500 text-white py-2 rounded hover:bg-black text-orange-500 ">Save</button>
+                   
+                </form>
+            </div>
+            
+
+
+          </div>
+        </div>
+      </div>
+    </main>
+
+
+
+
+  <!-- footer -->
+  <div th:insert="~{footer}"></div>
+</body>
+
+</html>

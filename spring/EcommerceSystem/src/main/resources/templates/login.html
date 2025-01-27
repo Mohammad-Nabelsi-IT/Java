@@ -1,0 +1,54 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<style>
+    #vid {
+        width: 100%;
+        height: auto;
+        position: fixed;
+        z-index: -1;
+    }
+</style>
+
+<body>
+
+<!-- Navbar -->
+<div th:insert="~{nav-header}"></div>
+
+<!-- Backgraund -->
+
+<header class="">
+    <video id="vid" src="/videos/test4.mp4" autoplay loop muted>
+    </video>
+
+
+</header>
+
+<!-- Login -->
+<div class="flex justify-center items-center h-screen ">
+    <form class="bg-white p-6 rounded shadow-md w-96" method
+            ="Post" action="/login">
+        <h2 class="text-xl font-bold mb-4 text-center">Login</h2>
+
+        <input type="email" name="email" placeholder="Email" class="w-full p-2 border border-gray-300 rounded mb-3"/>
+        <input type="password" name="password" placeholder="password" class="w-full p-2 border border-gray-300 rounded mb-3"/>
+        <p class="text-red-500" th:text="${error}"></p>
+        <a class="text-blue-500 hover:underline">I forgot my password</a>
+        <button class="w-full bg-orange-500 text-white py-2 mt-4 rounded hover:bg-black text-orange-500">Login</button>
+        <p class="text-center text-sm text-gray-500 mt-3">
+            Don`t have an account? <a href="/register" class="text-blue-500 hover:underline">Register</a>
+        </p>
+    </form>
+</div>
+
+<!-- footer -->
+<div th:insert="~{footer}"></div>
+</body>
+
+</html>

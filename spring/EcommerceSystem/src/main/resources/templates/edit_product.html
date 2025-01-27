@@ -1,0 +1,52 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<style>
+    #vid {
+        width: 100%;
+        height: auto;
+        position: fixed;
+        z-index: -1;
+    }
+</style>
+
+<body>
+
+<!-- Navbar -->
+<div th:insert="~{nav-header}"></div>
+
+<!-- Backgraund -->
+
+<header class="">
+    <video id="vid" src="/videos/v4.mp4" autoplay loop muted>
+    </video>
+
+
+</header>
+
+<!-- Login -->
+<div class="flex justify-center items-center h-screen ">
+    <form class="bg-white p-6 rounded shadow-md w-96" method="post" action="/products/update">
+        <h2 class="text-xl font-bold mb-4 text-center"></h2>
+        <input type="hidden" th:value="${product.getId()}" name="id">
+        <input type="text" th:value="${product.getName()}" name="name" placeholder="name" class="w-full p-2 border border-gray-300 rounded mb-3"/>
+        <input type="text" th:value="${product.getDescription()}" name="description" placeholder="description" class="w-full p-2 border border-gray-300 rounded mb-3"/>
+        <input type="text" th:value="${product.getPrice()}" name="price" placeholder="price" class="w-full p-2 border border-gray-300 rounded mb-3"/>
+        <input type="text" th:value="${product.getQuantity()}" name="quantity_in_stock" placeholder="quantity" class="w-full p-2 border border-gray-300 rounded mb-3"/>
+        <input type="text" th:value="${product.getImage()}" name="image_url" placeholder="//url" class="w-full p-2 border border-gray-300 rounded mb-3"/>
+        <button class="w-full bg-orange-500 text-white py-2 mt-4 rounded hover:bg-black text-orange-500">Save</button>
+
+    </form>
+</div>
+
+<!-- footer -->
+<div th:insert="~{footer}"></div>
+</body>
+
+</html>

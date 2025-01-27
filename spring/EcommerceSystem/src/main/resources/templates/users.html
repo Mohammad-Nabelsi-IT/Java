@@ -1,0 +1,93 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <style>
+        .text-stroke {
+            -webkit-text-stroke: 1px black;
+        }
+    </style>
+</head>
+
+
+<body class="bg-gray-200">
+<!-- Navbar -->
+<div th:insert="~{nav-header-dashboard}"></div>
+
+<main class="container min-h-screen mx-auto py-8" id="user_management">
+    <!--    <h2 class="text-2xl font-bold text-gray-800 mb-6">Products</h2>-->
+    <div class="grid grid-cols-1 gap-6">
+        <!-- Example-1-->
+        <div class="bg-white shadow-md rounded overflow-hidden mt-16">
+
+            <div class="p-4 mx-2 flex justify-between">
+                <h2 class="text-lg font-bold">Users</h2>
+                <a href="/user_add"
+                   class="mt-1 bg-green-500 text-black py-2 px-4 py-2 bg-orange-500 text-black rounded my-4 hover:bg-orange-700 text-white">
+                    Add New User</a>
+            </div>
+
+            <div class="p-4 mx-2">
+
+                <div class="relative overflow-x-auto shadow-md sm:rounded-lg">
+                    <table class="w-full text-sm text-left rtl:text-right text-gray-500 white:text-gray-400">
+                        <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-300 dark:text-black">
+                        <tr>
+                            <th scope="col" class="text-center">
+                                ID
+                            </th>
+
+                            <th scope="col" class="px-6 py-3">
+                                Name
+                            </th>
+                            <th scope="col" class="px-6 py-3">
+                                Email
+                            </th>
+                            <th scope="col" class="px-6 py-3">
+                                Role
+                            </th>
+                            <th scope="col" class="px-6 py-3">
+                                Action
+                            </th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr th:each="u:${users}" class="bg-orange-200 text-black font-medium">
+                            <td th:text="${u.getId()}" class="text-center">
+
+                            </td>
+                            <td th:text ="${u.getUser_name()}">
+
+                            </td>
+                            <td th:text="${u.getEmail()}">
+
+                            </td>
+                            <td th:text="${u.getRole()}">
+
+                            </td>
+                            <td class="px-6 py-4">
+                                <a th:href="'/users/edit?id='+${u.getId()}" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Edit </a>
+                                | <a th:href="'/users/delete?id='+${u.getId()}" class="font-medium text-red-600 dark:text-red-500 hover:underline">Delete</a>
+
+                            </td>
+                        </tr>
+
+                        </tbody>
+                    </table>
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+</main>
+
+
+<div th:insert="~{footer}"></div>
+</body>
+
+</html>
